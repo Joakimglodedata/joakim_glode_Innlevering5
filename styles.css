@@ -1,0 +1,315 @@
+body {
+    background-color: rgb(252, 225, 102);
+    color: green;
+ }
+
+img {
+    min-width: 70px;
+    max-width: 10%;
+ }
+
+.mobil {
+    display: none;
+ }
+
+.hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ }
+
+.berries, .egg {
+    display: none;
+    justify-content: space-evenly;
+    flex-direction: row;
+ }
+
+.i1, .i2, .i3, .i4, .i5, .i6 {
+    border: 2px solid greenyellow;
+    border-radius: 50px;
+    padding: 8px;
+    background-color: greenyellow;
+ }
+
+/* Animasjon som gjelder for begge versjonene av siden */
+.mat {
+    animation: matanimasjon 5s ease-in infinite forwards; 
+ }
+
+    @keyframes matanimasjon {
+      0% {
+        opacity: 0;
+       }
+      40% {
+        transform: translateY(0px);
+        opacity: 1;
+       }
+      80% {
+        transform: translateY(100px);
+        opacity: 0;
+       }
+      100% {
+        transform: translateY(140px);
+       }
+    }
+
+
+/* Display for små skjermer*/
+    @media (max-width: 425px) {
+      .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+  
+      .i2 {
+        order: 2;
+        width: 65%;
+      }
+  
+      .i5 {
+        order: 1;
+        width: 45%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: -20px;
+        margin-bottom: -17px;
+      }
+      
+      .i1, .i3, .i4, .i6 {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        margin: -3px;
+      }
+  
+      .egg {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+      }
+  
+      .mobil {
+        display: flex;
+      }
+  
+      .data {
+        display: none;
+      }
+    /*Ny animasjon for små skjermer*/
+    .i1, .i3, .i4, .i6 {
+        animation: slangeåling 5s ease-in-out infinite; 
+     }
+    .i3 {
+        animation-delay: -400ms;
+     }
+    .i4 {
+        animation-delay: -800ms;
+     }
+    .i6 {
+        animation-delay: -1200ms;
+     }
+
+    .i5 {
+        animation: slangeålingkropp 5s ease-in-out -3900ms infinite; 
+     }
+
+    .i2 {
+        animation: slangeålinghode 5s ease-in-out -4000ms infinite; 
+     }
+    
+    /* .i5 {
+        animation-delay: -1200ms;
+     }
+    .i2 {
+        animation-delay: -0ms;
+     } */
+
+    @keyframes slangeåling {
+        0% {
+            transform: translatex(-80px); 
+         }
+        50% {
+            transform: translatex(80px);
+         }
+        100% {
+            transform: translatex(-80px);
+         }
+        }
+    @keyframes slangeålingkropp {
+        0% {
+            transform: rotate(-10deg);
+            /* rotate: -10deg; */
+         }
+        50% {
+            transform: rotate(10deg);
+            /* rotate: 10deg; */
+         }
+        100% {
+            transform: rotate(-10deg);
+            /* rotate: -10deg; */
+         }
+        }
+    @keyframes slangeålinghode {
+        0% {
+            transform: translatex(-30px); 
+         }
+        35% {
+            scale:1;
+        }
+        50% {
+            transform: translatex(30px);
+         }
+        65% {
+            scale:1.06;
+        }
+        90% {
+            scale:1;
+        }
+        100% {
+            transform: translatex(-30px);
+         }
+        }
+    }
+
+/* Display for store skjermer*/
+    @media (min-width: 426px) {
+      .berries {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+      .container {
+        display: grid;
+        grid-template-columns: 80px 200px 80px;
+        justify-content: center;
+        column-gap: 10px;
+        row-gap: 5px;
+        grid-template-rows: 220px 430px;
+      }
+
+      .i6 {
+        align-self: self-end;
+      }
+    
+      .i5 {
+        align-self: self-start;
+      }
+    
+      .i4 {
+        align-self: self-end;
+      }
+      
+      .i3 {
+        align-self: self-end;
+      }
+    
+      .i2 {
+        align-self: self-start;
+      } 
+    
+      .i1 {
+        align-self: self-end;
+        border: 2px solid greenyellow;
+        border-radius: 50px;
+      } 
+
+        /*Ny animasjon for store skjermer*/
+      .i3,.i6 {
+        animation: skilpaddesteghøgre 5s ease-in-out infinite forwards; 
+         }
+      .i1, .i4 {
+        animation: skilpaddestegvenstre 5s ease-in-out infinite forwards; 
+         }       
+
+      .i5 {
+        animation: skilpaddestegkropp 5s ease-in-out infinite forwards; 
+         }
+      .i2 {
+        animation: skilpaddesteghode 5s ease-in-out infinite forwards; 
+         }
+        
+      @keyframes skilpaddesteghøgre {
+        0% {
+            transform: translatex(10px);
+            scale: 1; 
+            rotate: 40deg;
+         }
+        40% {
+            transform: translateY(-50px);
+            scale: 1.2;
+            rotate: 5deg;
+         }
+        70% {
+            transform: translatex(-30px), translateY(-20px);
+            rotate: 40deg;
+         }
+        80% {
+            transform: translatex(10px);
+            scale: 1; 
+            rotate: 40deg;
+         }
+        100% {
+            rotate: 40deg;
+            transform: translatex(10px);
+         }
+        }
+
+        @keyframes skilpaddestegvenstre {
+            0% {
+                transform: translatex(-10px);
+                scale: 1; 
+                rotate: -40deg;
+             }
+            40% {
+                transform: translateY(-50px);
+                scale: 1.2;
+                rotate: -5deg;
+             }
+            70% {
+                transform: translatex(30px), translateY(-20px);
+                rotate: -40deg;
+             }
+            80% {
+                transform: translatex(-10px);
+                scale: 1; 
+                rotate: -40deg;
+             }
+            100% {
+                rotate: -40deg;
+                transform: translatex(-10px);
+             }
+            }
+
+      @keyframes skilpaddestegkropp {
+        0% {
+            transform: translateY(0px);
+         }
+        40% {
+            transform: translateY(0px);
+         }
+        80% {
+            transform: translateY(-30px);
+         }
+        }
+      @keyframes skilpaddesteghode {
+        0% {
+            transform: translateY(0px);
+         }
+        40% {
+            transform: translateY(0px);
+            
+         }
+        60% {
+            scale: 1;
+         }
+        80% {
+            transform: translateY(-40px);
+            scale: 1.05;
+         }
+        }
+    }
+    
+   
