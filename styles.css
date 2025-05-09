@@ -8,6 +8,13 @@ img {
     max-width: 10%;
  }
 
+button {
+  position: fixed;
+  right: 10vw;
+  top: 80vh;
+  border-radius: 100%;
+  padding: 10px;
+}
 
 /* Body */
 .mobil {
@@ -26,13 +33,7 @@ img {
     flex-direction: row;
  }
 
-button {
-  position: fixed;
-  right: 10vw;
-  top: 80vh;
-  border-radius: 100%;
-  padding: 10px;
-}
+
 
 .i1, .i2, .i3, .i4, .i5, .i6 {
     border: 5px dashed rgb(108, 180, 0);
